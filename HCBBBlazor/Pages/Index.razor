@@ -2,8 +2,15 @@
 
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
-<buton @onclick="FetchData"> Get Data</buton>
+<h1>Health Care Blue Book</h1>
+<style>
+    .orange-button {
+        background-color: orange;
+        /*border: 1px solid black;*/
+    }
+</style>
+
+<button class="orange-button" @onclick="FetchData">Get Data</button>
 
 @if (todo != null)
 {
@@ -22,9 +29,9 @@
 
     public async Task FetchData()
     {
-        //todo = await httpClient.GetFromJsonAsync<Todo>("https://jsonplaceholder.typicode.com/todos/1");  
+        todo = await httpClient.GetFromJsonAsync<Todo>("https://jsonplaceholder.typicode.com/todos/1");  
 
-        token = await httpClient.GetFromJsonAsync<Authenticate>("https://healthcarebluebook.com/api/HcbbSecureWebService/");
+        //token = await httpClient.GetFromJsonAsync<Authenticate>("https://healthcarebluebook.com/api/HcbbSecureWebService/");
     }
 
 

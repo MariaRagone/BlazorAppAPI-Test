@@ -15,15 +15,24 @@
 @code {
     public Todo todo;
 
+    public Authenticate token;
+
+
     public HttpClient httpClient = new HttpClient();
 
     public async Task FetchData()
     {
-        todo = await httpClient.GetFromJsonAsync<Todo>("https://jsonplaceholder.typicode.com/todos/1");  
+        //todo = await httpClient.GetFromJsonAsync<Todo>("https://jsonplaceholder.typicode.com/todos/1");  
+
+        token = await httpClient.GetFromJsonAsync<Authenticate>("https://healthcarebluebook.com/api/HcbbSecureWebService/");
     }
 
 
 
+    public class Authenticate
+    {
+        
+    }
 
     public class Todo
     {
